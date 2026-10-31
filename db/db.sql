@@ -1,0 +1,28 @@
+create table authors
+(
+    id        int generated always as identity primary key,
+    full_name varchar(100),
+    country   varchar(100)
+);
+
+create table books
+(
+    id               int generated always as identity primary key,
+    title            varchar(100),
+    publication_year int,
+    price            int,
+    author_id        int references authors (id)
+);
+
+create table readers
+(
+    id        int generated always as identity primary key,
+    full_name varchar(100)
+);
+
+create table loads
+(
+    id        int generated always as identity primary key,
+    reader_id int references readers (id),
+    book_id   int references books (id)
+);
