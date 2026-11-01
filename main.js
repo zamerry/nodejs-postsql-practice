@@ -1,6 +1,9 @@
 import express from 'express'
 import authors_router from './routers/authors.router.js'
 import books_router from './routers/books.router.js'
+import dotenv from 'dotenv'
+
+dotenv.config()
 
 const port = 5000
 
