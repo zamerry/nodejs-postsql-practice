@@ -10,7 +10,7 @@ create table books
     id               int generated always as identity primary key,
     title            varchar(100),
     publication_year int,
-    price            int,
+    price            numeric,
     author_id        int references authors (id)
 );
 
@@ -26,3 +26,11 @@ create table loads
     reader_id int references readers (id),
     book_id   int references books (id)
 );
+
+create or replace function get_sum(a numeric, b numeric)
+returns numeric as $$
+begin
+return a + b;
+end;
+$$
+language plpgsql;

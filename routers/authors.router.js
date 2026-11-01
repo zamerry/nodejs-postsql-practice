@@ -11,5 +11,9 @@ router.put('/update_author', AuthorsController.update_author)
 router.delete('/delete_author/:id', AuthorsController.delete_author)
 
 router.get('/join', AuthorsController.join_query)
+router.get('/get_query', AuthorsController.get_query)
+router.get('/max', AuthorsController.get_max_price)
+router.post('/reduce/:id', AuthorsController.reduce_price)
+router.post('/plusplus', AuthorsController.plusplus)
 
 export default router
