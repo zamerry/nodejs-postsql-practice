@@ -1,11 +1,11 @@
 import {Pool} from "pg"
 
 const pool = new Pool({
-    user: "postgres",
-    password: "zamerry",
+    user: process.env.db_user,
+    password: process.env.db_password,
     host: "localhost",
     port: 5432,
-    database: "node_sql"
+    database: process.env.db_name
 })
 
 export default pool
